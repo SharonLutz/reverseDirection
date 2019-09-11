@@ -1,0 +1,9 @@
+Package: reverseDirection
+Type: Package
+Title: Runs the MR Steiger approach on simulated data in the presence or absence of unmeasured confounding of the SNP-mediator-outcome relationship.
+Version: 1.0
+Date: 2019-09-09
+Author: Sharon Lutz
+Maintainer: Sharon Lutz <smlutz@hsph.harvard.edu>
+Description: Runs the MR Steiger approach on simulated data in the presence or absence of unmeasured confounding of the SNP-mediator-outcome relationship.
+License: GPL-2
