@@ -27,9 +27,9 @@ function(nSim=1000, n=100,
     #matrix to save MR steiger
     ################################################################################
     #save results for type 1 error rate betaM=0 and power betaM>0
-   matR <- matrix(0,ncol=8,nrow=length(betaM))
-    colnames(matR) <- c("CorrectDirection","CorrectDirectionAdj","SteigerTest","SteigerTestAdj","SensitivityRatio","corX1M","corX1Y","corMY")
-    
+   matR <- matrix(0,ncol=10,nrow=length(betaM))
+    colnames(matR) <- c("McausesY","McausesYadj","CorrectDirection","CorrectDirectionAdj","SteigerTest","SteigerTestAdj","SensitivityRatio","corX1M","corX1Y","corMY")
+  
     ################################################################################
     # cycle through the simulations
     ################################################################################  
@@ -125,6 +125,12 @@ function(nSim=1000, n=100,
         #sensitivity_ratio: Ratio of vz1/vz0. Higher means inferred direction is less susceptible to measurement error - 
         matR[bM,"SensitivityRatio"]<-matR[bM,"SensitivityRatio"]+mrs$sensitivity_ratio
         
+         # correct direction and Steiger test reject
+        if(mrs$correct_causal_direction==TRUE & mrs$steiger_test<alpha){
+        	matR[bM,"McausesY"]<-matR[bM,"McausesY"]+1}
+        if(mrs$correct_causal_direction_adj==TRUE & mrs$steiger_test_adj<alpha){
+        	matR[bM,"McausesYadj"]<-matR[bM,"McausesYadj"]+1}
+         
         ################################################################################
         # end loops
         ################################################################################    
