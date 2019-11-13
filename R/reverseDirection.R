@@ -62,7 +62,6 @@ function(nSim=1000, n=100,
         Y <- rnorm(n,beta0 + betaM[bM]*M +betaU*U,sqrt(varY))
         }
         if(Uconfounder==F){
-        	U<-rnorm(n,delta0,sqrt(varU))
         	M <- rnorm(n,gamma0 + X%*%gammaX,sqrt(varM))
         Y <- rnorm(n,beta0 + betaM[bM]*M,sqrt(varY))
         	}
