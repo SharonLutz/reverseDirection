@@ -21,7 +21,7 @@ function(nSim=1000, n=100,
     if(length(unique(betaM))<2){stop("Error: betaM must be a vector with at least two values")}
     if(!varM>0){stop("Error: varM must be greater than 0")}
     if(!varY>0){stop("Error: varY must be greater than 0")}
-    if(length(gammaX)!=nSNP){stop("Error: ")}
+    if(length(gammaX)!=nSNP){stop("Error: Length of gammaX does not equal nSNP")}
     
     ################################################################################
     #matrix to save MR steiger
