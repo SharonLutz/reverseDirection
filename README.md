@@ -51,13 +51,28 @@ E\[Y \] = 0 + &beta;<sub>M</sub> X +0.25 U
 ```
 library(reverseDirection)
 
-reverseDirection(nSim = 1000, n = 100, nSNP = 1, MAF = 0.5, gamma0 = 0, gammaX = 0.4, varM = 1, 
+rr<-reverseDirection(nSim = 1000, n = 100, nSNP = 1, MAF = 0.5, gamma0 = 0, gammaX = 0.4, varM = 1, 
 beta0 = 0, betaM =seq(from = 0, to = 1, by=0.25) , varY = 0.2, delta0 = 0, deltaX = 0.25, 
 varU = 1, gammaU = 0, betaU = 0.25, Uconfounder =T, alpha = 0.05, SEED = 1, 
 plot.pdf = T, plot.name = "plotMRdirection.pdf")
+
+round(rr$matrix,2)
 ```
 
-
+```
+     McausesY McausesYadj CorrectDirection CorrectDirectionAdj SteigerTest SteigerTestAdj
+[1,]     0.18        0.18             0.90                0.90        0.18           0.18
+[2,]     0.04        0.04             0.78                0.78        0.04           0.04
+[3,]     0.00        0.00             0.61                0.61        0.00           0.00
+[4,]     0.00        0.00             0.47                0.47        0.00           0.00
+[5,]     0.00        0.00             0.44                0.44        0.00           0.00
+     SensitivityRatio corX1M corX1Y corMY
+[1,]            55.66   0.27   0.09  0.02
+[2,]            76.08   0.27   0.20  0.47
+[3,]             2.98   0.27   0.25  0.72
+[4,]             2.27   0.27   0.27  0.84
+[5,]             1.76   0.27   0.28  0.90
+```
 
 <img src="reverseDirectionplot.png" width="500">
 
