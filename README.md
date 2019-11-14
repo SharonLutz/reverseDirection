@@ -59,7 +59,6 @@ plot.pdf = T, plot.name = "plotMRdirection.pdf")
 
 
 
-## Output:
 <img src="reverseDirectionplot.png" width="500">
 
 
