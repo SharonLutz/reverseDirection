@@ -27,18 +27,25 @@ E\[Y\] = &beta;<sub>o</sub> +  &beta;<sub>M</sub> M
 
 All of these values are inputted by the user (i.e. the intercept beta0 and the effect of the mediator directly on the outcome as betaM).
 
-If there is pleiotropy (input),
+If there is pleiotropy (input Uconfounder =T), then an additional covariate U is gernerated from a normal distribution with a variance (input varU) and a mean such that
+
+E\[U\] = &delta;<sub>o</sub> + &sum; &delta;<sub>X</sub>  X<sub>i</sub> 
+
+Then, the mediator is generated as defined above, but the outcome Y is generated from a normal distribution such that
+E\[Y\] = &beta;<sub>o</sub> +  &beta;<sub>M</sub> M  +  &beta;<sub>U</sub> U
 
 After the SNPs X, mediator M, and outcome Y are generated, then the reverseDirection function runs the MR Steiger approach to determine if the mediator M causes the outcome Y.
 
+## Output
 
 ## Example:
+Consider an example with 100 subjects (input n=100) for one SNP (input nSNP = 1) with a MAF of 50% (input MAF=0.5).
 
 ```
 library(reverseDirection)
 ?reverseDirection # For details on this function
 
-reverseDirection(n = 1000)
+reverseDirection(nSim =1000, n = 100, nSNP = 1, MAF = 0.5, gamma0 = 0, gammaX 0.4, varM = 1, beta0 = 0, betaM =seq(from = 0, to = 1, by=0.25) , varY = 0.2, delta0 = 0, deltaX = 0.25, varU = 1, gammaU = 0, betaU = 0.25, Uconfounder =T, alpha = 0.05, SEED = 1, plot.pdf = T, plot.name = "plotMRdirection.pdf")
 
 ```
 
@@ -56,7 +63,7 @@ varUv <- 1
 gammaUv <- 0 # effect of U on M
 betaUv <- 0.25 # effect of U on Y
 
-reverseDirection(nSim =1000, n = 100, nSNP = 1, MAF = 0.5, gamma0 = 0, gammaX 0.4, varM = 1, beta0 = 0, betaM =seq(from = 0, to = 1, by=0.25) , varY = 0.2, delta0 = 0, deltaX = 0.25, varU = 1, gammaU = 0, betaU = 0.25, Uconfounder =T, alpha = 0.05, SEED = 1, plot.pdf = T, plot.name = "plotMRdirection.pdf")
+
 
 ## Output:
 <img src="reverseDirectionplot.png" width="500">
