@@ -13,26 +13,26 @@ devtools::install_github("SharonLutz/reverseDirection")
 ```
 
 ## Input
-nSNP is the number of SNPs generated from a binomial distribution for n subjects (input n) for a given minor allele frequency (input vector MAF).
+First, the number of SNPs (input nSNP) are generated from a binomial distribution for n subjects (input n) for a given minor allele frequency (input vector MAF).
 
-For the SNPs Xi, the mediator/ exposure M is generated from a normal distribution with the variance (input varM) and the mean as follows:
+For the SNPs Xi for i=1..., for K SNPs, the mediator/ exposure M is generated from a normal distribution with the variance (input varM) and the mean as follows:
 
-E\[M<sub>i</sub> \] = &gamma;<sub>o</sub> + &sum; &gamma;<sub>X</sub>  X<sub>i</sub> 
+E\[M \] = &gamma;<sub>o</sub> + &sum; &gamma;<sub>X</sub>  X<sub>i</sub> 
 
 All of these values are inputted by the user (i.e. the intercept gamma0, and the genetic effect size as a vector gammaX).
 
 The outcome Y is generated from a normal distribution with the variance (input varY) and the mean as follows:
 
-E\[Y<sub>i</sub> \] = &beta;<sub>o</sub> +  &beta;<sub>M</sub> M<sub>i</sub>  
+E\[Y \] = &beta;<sub>o</sub> +  &beta;<sub>M</sub> M
 
 All of these values are inputted by the user (i.e. the intercept beta0 and the effect of the mediator directly on the outcome as betaM).
 
 If there is pleiotropy (input Uconfounder =T), then an additional covariate U is gernerated from a normal distribution with a variance (input varU) and a mean such that
 
-E\[U<sub>i</sub> \] = &delta;<sub>o</sub> + &sum; &delta;<sub>X</sub>  X<sub>i</sub> 
+E\[U \] = &delta;<sub>o</sub> + &sum; &delta;<sub>X</sub>  X<sub>i</sub> 
 
 Then, the mediator is generated as defined above, but the outcome Y is generated from a normal distribution such that
-E\[Y<sub>i</sub> \] = &beta;<sub>o</sub> +  &beta;<sub>M</sub> M<sub>i</sub>   +  &beta;<sub>U</sub> U<sub>i</sub> 
+E\[Y \] = &beta;<sub>o</sub> +  &beta;<sub>M</sub> M  +  &beta;<sub>U</sub> U
 
 After the SNPs X, mediator M, and outcome Y are generated, then the reverseDirection function runs the MR Steiger approach to determine if the mediator M causes the outcome Y.
 
@@ -40,11 +40,11 @@ After the SNPs X, mediator M, and outcome Y are generated, then the reverseDirec
 
 ## Example:
 Consider an example with 100 subjects (input n=100) for one SNP (input nSNP = 1) with a MAF of 50% (input MAF=0.5). Consider a pleiotropic effect (input Uconfounder =T). Then, let the mediator M be generated from a normal distribution with a variance of 1 (input varM = 1) and mean such that 
-E\[M<sub>i</sub> \] = 0 + 0.4 X<sub>i</sub> 
+E\[M \] = 0 + 0.4 X
 (input gamma0 = 0, gammaX 0.4). The covariate U is generated from a normal distribution with a variance of 1 (input varU = 1) and mean such that 
-E\[U<sub>i</sub> \] = 0 + 0.25 X<sub>i</sub> 
+E\[U \] = 0 + 0.25 X
 (input delta0 = 0, deltaX = 0.25). The outcome Y is generated from a normal distribution with a variance of 1 (input varU = 1) and mean such that 
-E\[Y<sub>i</sub> \] = 0 + &beta;<sub>M</sub> X<sub>i</sub> +0.25 U<sub>i</sub>
+E\[Y \] = 0 + &beta;<sub>M</sub> X +0.25 U
 (input beta0 = 0, betaU = 0.25) and &beta;<sub>M</sub> varies from 0 to 1 by 0.25 (input betaM =seq(from = 0, to = 1, by=0.25)). The R code to run this example is given below.
 
 ```
