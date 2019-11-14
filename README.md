@@ -15,7 +15,7 @@ devtools::install_github("SharonLutz/reverseDirection")
 ## Input
 First, the number of SNPs (input nSNP) are generated from a binomial distribution for n subjects (input n) for a given minor allele frequency (input vector MAF).
 
-For the SNPs Xi for i=1..., for K SNPs, the mediator/ exposure M is generated from a normal distribution with the variance (input varM) and the mean as follows:
+For the SNPs Xi for i=1,...,K for K SNPs, the mediator/ exposure M is generated from a normal distribution with the variance (input varM) and the mean as follows:
 
 E\[M \] = &gamma;<sub>o</sub> + &sum; &gamma;<sub>X</sub>  X<sub>i</sub> 
 
