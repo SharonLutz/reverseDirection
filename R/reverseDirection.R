@@ -22,7 +22,7 @@ function(nSim=1000, n=100,
     if(!varM>0){stop("Error: varM must be greater than 0")}
     if(!varY>0){stop("Error: varY must be greater than 0")}
     if(length(gammaX)!=nSNP){stop("Error: Length of gammaX does not equal nSNP")}
-    if(length(deltaX)!=nSNP){stop("Error: Length of deltaX does not equal nSNP")}
+    if(length(deltaX)!=nSNP & Uconfounder==T){stop("Error: Length of deltaX does not equal nSNP")}
   
     ################################################################################
     #matrix to save MR steiger
