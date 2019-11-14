@@ -45,7 +45,7 @@ E\[M<sub>i</sub> \] = 0 + 0.4 X<sub>i</sub>
 E\[U<sub>i</sub> \] = 0 + 0.25 X<sub>i</sub> 
 (input delta0 = 0, deltaX = 0.25). The outcome Y is generated from a normal distribution with a variance of 1 (input varU = 1) and mean such that 
 E\[Y<sub>i</sub> \] = 0 + &beta;<sub>M</sub> X<sub>i</sub> +0.25 U<sub>i</sub>
-(input beta0 = 0, betaU = 0.25) and &beta;<sub>M</sub> varies from 0 to 1 by 0.25 (input betaM =seq(from = 0, to = 1, by=0.25)). The R code to run this example is given below
+(input beta0 = 0, betaU = 0.25) and &beta;<sub>M</sub> varies from 0 to 1 by 0.25 (input betaM =seq(from = 0, to = 1, by=0.25)). The R code to run this example is given below.
 
 ```
 library(reverseDirection)
@@ -56,8 +56,6 @@ varU = 1, gammaU = 0, betaU = 0.25, Uconfounder =T, alpha = 0.05, SEED = 1,
 plot.pdf = T, plot.name = "plotMRdirection.pdf")
 
 ```
-
-
 
 
 
