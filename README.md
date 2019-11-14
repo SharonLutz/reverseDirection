@@ -33,6 +33,7 @@ E\[U \] = &delta;<sub>o</sub> + &sum; &delta;<sub>X</sub>  X<sub>i</sub>
 (input delta0 and the vector deltaX).
 
 Then, the mediator is generated as defined above, but the outcome Y is generated from a normal distribution with variance (input varY) such that
+
 E\[Y \] = &beta;<sub>o</sub> +  &beta;<sub>M</sub> M  +  &beta;<sub>U</sub> U
 (input beta0, the vector betaM, betaU).
 
