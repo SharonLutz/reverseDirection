@@ -30,11 +30,13 @@ All of these values are inputted by the user (i.e. the intercept beta0 and the e
 If there is pleiotropy (input Uconfounder =T), then an additional covariate U is generated from a normal distribution with a variance (input varU) and a mean such that
 
 E\[U \] = &delta;<sub>o</sub> + &sum; &delta;<sub>X</sub>  X<sub>i</sub> 
+
 (input delta0 and the vector deltaX).
 
 Then, the mediator is generated as defined above, but the outcome Y is generated from a normal distribution with variance (input varY) such that
 
 E\[Y \] = &beta;<sub>o</sub> +  &beta;<sub>M</sub> M  +  &beta;<sub>U</sub> U
+
 (input beta0, the vector betaM, betaU).
 
 After the SNPs X, mediator M, and outcome Y are generated, then the reverseDirection function runs the MR Steiger approach to determine if the mediator M causes the outcome Y.
