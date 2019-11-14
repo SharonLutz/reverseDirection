@@ -51,11 +51,10 @@ E\[Y \] = 0 + &beta;<sub>M</sub> X +0.25 U
 ```
 library(reverseDirection)
 
-reverseDirection(nSim =1000, n = 100, nSNP = 1, MAF = 0.5, gamma0 = 0, gammaX 0.4, varM = 1, 
+reverseDirection(nSim = 1000, n = 100, nSNP = 1, MAF = 0.5, gamma0 = 0, gammaX = 0.4, varM = 1, 
 beta0 = 0, betaM =seq(from = 0, to = 1, by=0.25) , varY = 0.2, delta0 = 0, deltaX = 0.25, 
 varU = 1, gammaU = 0, betaU = 0.25, Uconfounder =T, alpha = 0.05, SEED = 1, 
 plot.pdf = T, plot.name = "plotMRdirection.pdf")
-
 ```
 
 
