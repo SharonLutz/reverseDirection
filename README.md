@@ -3,7 +3,7 @@ Examines the MR Steiger approach to detect the directionality between the mediat
 
 ## Installation
 ```
-# you need R v3.4 or higher
+# R v3.4 or higher is needed
 install.packages("devtools")  # devtools must be installed first
 install.packages("MendelianRandomization") 
 install.packages("psych")
