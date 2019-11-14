@@ -39,12 +39,16 @@ After the SNPs X, mediator M, and outcome Y are generated, then the reverseDirec
 ## Output
 
 ## Example:
-Consider an example with 100 subjects (input n=100) for one SNP (input nSNP = 1) with a MAF of 50% (input MAF=0.5). Consider a pleiotropic effect (input Uconfounder =T). Then, let the mediator M be drawn from a normal distribution with a variance of 1 (input varM = 1) and mean such that 
-E\[M<sub>i</sub> \] = 0 +  X<sub>i</sub> 
+Consider an example with 100 subjects (input n=100) for one SNP (input nSNP = 1) with a MAF of 50% (input MAF=0.5). Consider a pleiotropic effect (input Uconfounder =T). Then, let the mediator M be generated from a normal distribution with a variance of 1 (input varM = 1) and mean such that 
+E\[M<sub>i</sub> \] = 0 + 0.4 X<sub>i</sub> 
+(input gamma0 = 0, gammaX 0.4). The covariate U is generated from a normal distribution with a variance of 1 (input varU = 1) and mean such that 
+E\[U<sub>i</sub> \] = 0 + 0.25 X<sub>i</sub> 
+(input delta0 = 0, deltaX = 0.25). The outcome Y is generated from a normal distribution with a variance of 1 (input varU = 1) and mean such that 
+E\[Y<sub>i</sub> \] = 0 + &beta;<sub>M</sub> X<sub>i</sub> +0.25 U<sub>i</sub>
+(input beta0 = 0, betaU = 0.25) and &beta;<sub>M</sub> varies from 0 to 1 by 0.25 (input betaM =seq(from = 0, to = 1, by=0.25)). The R code to run this example is given below
 
 ```
 library(reverseDirection)
-?reverseDirection # For details on this function
 
 reverseDirection(nSim =1000, n = 100, nSNP = 1, MAF = 0.5, gamma0 = 0, gammaX 0.4, varM = 1, 
 beta0 = 0, betaM =seq(from = 0, to = 1, by=0.25) , varY = 0.2, delta0 = 0, deltaX = 0.25, 
@@ -53,19 +57,7 @@ plot.pdf = T, plot.name = "plotMRdirection.pdf")
 
 ```
 
-simV<-3000
-nV<-100 
-snpV<-1 
-MAFv<-0.5 
-gammaXvec<-c(0.1,0.2,0.3,0.4) #effect of X on M
-varMv <- 1
-betaMv <- seq(from = 0, to = 1, by=0.25) # effect of M on Y
-varYv <- 0.2
-UconfounderV <- T
-deltaXv <- 0.25 # effect of X on U
-varUv <- 1
-gammaUv <- 0 # effect of U on M
-betaUv <- 0.25 # effect of U on Y
+
 
 
 
