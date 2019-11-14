@@ -71,8 +71,8 @@ specifies the name of the plot that is created
 }
 }
 \value{
-This function outputs the percent of simualtions where the correct direction is detected  between the mediator M and outcome Y using the MR Steiger approach either not adjusting for measurment error or adjusting for measurment error (CorrectDirection and CorrectDirectionAdj, respectively). The percent of simulations where the Steiger p-value is less than alpha without or with adjusting for measurment error (SteigerTest and SteigerTestAdj, respectively) The average sensitivity ratio is given by SensitivityRatio. The correlation between the first SNP and the mediator M (corX1M), correlation between the first SNP and the outcome Y (corX1Y) and the correlation between the mediator M and the outcome Y (corMY).
-}
+This function outputs the percent of simulations where the correct direction is detected between the mediator M and outcome Y using the MR Steiger approach either not adjusting for measurement error or adjusting for measurement error (CorrectDirection and CorrectDirectionAdj, respectively). The percent of simulations where the Steiger p-value is less than alpha without or with adjusting for measurement error (SteigerTest and SteigerTestAdj, respectively) The average sensitivity ratio is given by SensitivityRatio. The correlation between the first SNP and the mediator M (corX1M), correlation between the first SNP and the outcome Y (corX1Y) and the correlation between the mediator M and the outcome Y (corMY).
+  }
 \references{
 Hemani G, Tilling K, Davey Smith G (2017) Orienting the causal relationship between imprecisely measured traits using GWAS summary data. PLOS Genetics 13(11): e1007081.
 }
