@@ -74,6 +74,6 @@ round(rr$matrix,2)
 [5,]             1.76   0.27   0.28  0.90
 ```
 
-<img src="reverseDirectionplot.png" width="500">
+<img src="plotMRdirection.png" width="400">
 
 
