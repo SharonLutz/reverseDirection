@@ -37,6 +37,7 @@ E\[Y \] = &beta;<sub>o</sub> +  &beta;<sub>M</sub> M  +  &beta;<sub>U</sub> U
 After the SNPs X, mediator M, and outcome Y are generated, then the reverseDirection function runs the MR Steiger approach to determine if the mediator M causes the outcome Y.
 
 ## Output
+This function outputs the percent of simualtions where the correct direction is detected between the mediator M and outcome Y using the MR Steiger approach either not adjusting for measurment error or adjusting for measurment error (CorrectDirection and CorrectDirectionAdj, respectively). The percent of simulations where the Steiger p-value is less than alpha without or with adjusting for measurment error (SteigerTest and SteigerTestAdj, respectively) The average sensitivity ratio is given by SensitivityRatio. The correlation between the first SNP and the mediator M (corX1M), correlation between the first SNP and the outcome Y (corX1Y) and the correlation between the mediator M and the outcome Y (corMY).
 
 ## Example:
 Consider an example with 100 subjects (input n=100) for one SNP (input nSNP = 1) with a MAF of 50% (input MAF=0.5). Consider a pleiotropic effect (input Uconfounder =T). Then, let the mediator M be generated from a normal distribution with a variance of 1 (input varM = 1) and mean such that 
