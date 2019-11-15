@@ -64,7 +64,7 @@ plot.pdf = T, plot.name = "plotMRdirection.pdf")
 round(rr$matrix,2)
 ```
 
-The function outputs the following matrix and plot where each row corresponds to betaM. As seen below, when the association between M and Y increases in the presence  of pleiotropy, the direction of the arrow between the mediator M and the outcome Y  is only detected 44% of the time (row 5, column CorrectDirection).
+The function outputs the following matrix and plot where each row corresponds to betaM. As seen below, when the association between M and Y increases in the presence  of pleiotropy, the direction of the arrow between the mediator M and the outcome Y  is only detected 44% of the time (as shown in row 5 column CorrectDirection in the matrix and the plot).
 ```
      McausesY McausesYadj CorrectDirection CorrectDirectionAdj SteigerTest SteigerTestAdj
 [1,]     0.18        0.18             0.90                0.90        0.18           0.18
@@ -80,6 +80,6 @@ The function outputs the following matrix and plot where each row corresponds to
 [5,]             1.76   0.27   0.28  0.90
 ```
 
-<img src="plotMRdirection.png" width="400">
+<img src="plotMRdirection.png" width="500">
 
 
