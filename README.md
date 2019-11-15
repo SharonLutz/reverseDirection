@@ -42,7 +42,7 @@ E\[Y \] = &beta;<sub>o</sub> +  &beta;<sub>M</sub> M  +  &beta;<sub>U</sub> U
 After the SNPs X, mediator M, and outcome Y are generated, then the reverseDirection function runs the MR Steiger approach to determine if the mediator M causes the outcome Y.
 
 ## Output
-This function outputs the percent of simulations where the correct direction is detected between the mediator M and outcome Y using the MR Steiger approach either not adjusting for measurement error or adjusting for measurement error (CorrectDirection and CorrectDirectionAdj, respectively). The percent of simulations where the Steiger p-value is less than alpha without or with adjusting for measurement error (SteigerTest and SteigerTestAdj, respectively) The average sensitivity ratio is given by SensitivityRatio. The correlation between the first SNP and the mediator M (corX1M), correlation between the first SNP and the outcome Y (corX1Y) and the correlation between the mediator M and the outcome Y (corMY).
+This function outputs the percent of simulations where the correct direction is detected between the mediator M and outcome Y using the MR Steiger approach either not adjusting for measurement error or adjusting for measurement error (CorrectDirection and CorrectDirectionAdj, respectively). The percent of simulations where the Steiger p-value is less than alpha without or with adjusting for measurement error (SteigerTest and SteigerTestAdj, respectively). Also, proportion of simulations where the correct direction is detected and the Steiger p-value is less than alpha without or with adjusting for measurement error is outputted (McausesY and McausesYadj).  The average sensitivity ratio is given by SensitivityRatio. The correlation between the first SNP and the mediator M (corX1M), correlation between the first SNP and the outcome Y (corX1Y) and the correlation between the mediator M and the outcome Y (corMY).
 
 ## Example:
 Consider an example with 100 subjects (input n=100) for one SNP (input nSNP = 1) with a MAF of 50 (input MAF=0.5). Consider a pleiotropic effect (input Uconfounder =T). Then, let the mediator M be generated from a normal distribution with a variance of 1 (input varM = 1) and mean such that 
@@ -64,6 +64,7 @@ plot.pdf = T, plot.name = "plotMRdirection.pdf")
 round(rr$matrix,2)
 ```
 
+The function outputs the following matrix and plot where each row corresponds to betaM. As seen below, when the association between M and Y increases in the presence  of pleiotropy, the direction of the arrow between the mediator M and the outcome Y  is only detected 44% of the time (row 5, column CorrectDirection).
 ```
      McausesY McausesYadj CorrectDirection CorrectDirectionAdj SteigerTest SteigerTestAdj
 [1,]     0.18        0.18             0.90                0.90        0.18           0.18
