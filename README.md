@@ -81,5 +81,3 @@ The function outputs the following matrix and plot where each row corresponds to
 ```
 
 <img src="plotMRdirection.png" width="500">
-
-
