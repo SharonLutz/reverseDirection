@@ -1,13 +1,10 @@
 # reverseDirection
-Examines the MR Steiger approach to detect the directionality between the mediator and outcome through simulation studies.
+Examines the MR Steiger approach to detect the directionality between the exposure X and outcome Y through simulation studies.
 
 ## Installation
 ```
-# R v3.4 or higher is needed
-install.packages("devtools")  # devtools must be installed first
-install.packages("MendelianRandomization") 
+install.packages("devtools")  # devtools must be installed first, R v3.4 or higher is needed
 install.packages("psych")
-devtools::install_github("MRCIEU/TwoSampleMR") 
 
 devtools::install_github("SharonLutz/reverseDirection")
 ```
