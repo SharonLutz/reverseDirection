@@ -28,7 +28,7 @@ if there is no pleiotropy (input pleiotropy=F). If there is pleiotropy (input pl
 
 E\[Y \] = &beta;<sub>o</sub> +  &beta;<sub>X</sub> X + &beta;<sub>G</sub> G
 
-All of these values are inputted by the user (i.e. the intercept beta0 and the effect of the exposure directly on the outcome as  &beta;<sub>X</sub>).
+All of these values are inputted by the user (i.e. the intercept beta0, the effect of the exposure X on the outcome as  &beta;<sub>X</sub>, and the effect of the SNP G directly on the outcome as  &beta;<sub>G</sub>).
 
 After the SNP G, exposure X, and outcome Y are generated, then the reverseDirection function runs the MR Steiger approach to determine if the exposure X causes the outcome Y.
 
