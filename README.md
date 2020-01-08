@@ -63,11 +63,11 @@ round(results$matrix,2)
 
 The function outputs the following matrix and plot where each row corresponds to betaM. As seen below, when the association between M and Y increases in the presence  of pleiotropy, the direction of the arrow between the mediator M and the outcome Y  is only detected 44% of the time (as shown in row 5 column CorrectDirection in the matrix and the plot).
 ```
-     case1 case2 case3   Z+ CorrectDirection pSteiger  pMR corGX corGY corXY
-[1,]  0.00     0  1.00 0.95             0.95     0.27 0.06  0.27  0.00  0.00
-[2,]  0.03     0  0.96 0.90             0.90     0.20 0.41  0.28  0.17  0.61
-[3,]  0.05     0  0.95 0.77             0.77     0.13 0.62  0.27  0.23  0.84
-[4,]  0.05     0  0.94 0.72             0.72     0.10 0.72  0.27  0.25  0.92
+     case1 case2 case3   Z+ CorrectDirection Steiger   MR corGX corGY corXY
+[1,]  0.00     0  1.00 0.95             0.95    0.27 0.06  0.27  0.00  0.00
+[2,]  0.03     0  0.96 0.90             0.90    0.20 0.41  0.28  0.17  0.61
+[3,]  0.05     0  0.95 0.77             0.77    0.13 0.62  0.27  0.23  0.84
+[4,]  0.05     0  0.94 0.72             0.72    0.10 0.72  0.27  0.25  0.92
 ```
 
 <img src="reverseDirection.png" width="500">
