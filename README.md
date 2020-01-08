@@ -53,28 +53,21 @@ E\[Y \] = 0 + &beta;<sub>M</sub> X +0.25 U
 ```
 library(reverseDirection)
 
-rr<-reverseDirection(nSim = 1000, n = 100, nSNP = 1, MAF = 0.5, gamma0 = 0, gammaX = 0.4, varM = 1, 
-beta0 = 0, betaM =seq(from = 0, to = 1, by=0.25) , varY = 0.2, delta0 = 0, deltaX = 0.25, 
-varU = 1, gammaU = 0, betaU = 0.25, Uconfounder =T, alpha = 0.05, SEED = 1, 
-plot.pdf = T, plot.name = "plotMRdirection.pdf")
+results<-reverseDirection(nSim = 1000, n = 100, MAF = 0.5, gamma0 = 0, gammaG = 0.4, varX = 1, 
+measurementError = F, delta0 = 0, deltaX = 0.25, varME = 1, 
+beta0 = 0, betaX = seq(from = 0, to = 1, length.out = 4), pleiotropy = F, betaG = 0.25, varY = 0.2, 
+sig.level = 0.05, SEED = 1, plot.pdf = T, plot.name = "reverseDirection.pdf")
 
-round(rr$matrix,2)
+round(results$matrix,2)
 ```
 
 The function outputs the following matrix and plot where each row corresponds to betaM. As seen below, when the association between M and Y increases in the presence  of pleiotropy, the direction of the arrow between the mediator M and the outcome Y  is only detected 44% of the time (as shown in row 5 column CorrectDirection in the matrix and the plot).
 ```
-     McausesY McausesYadj CorrectDirection CorrectDirectionAdj SteigerTest SteigerTestAdj
-[1,]     0.18        0.18             0.90                0.90        0.18           0.18
-[2,]     0.04        0.04             0.78                0.78        0.04           0.04
-[3,]     0.00        0.00             0.61                0.61        0.00           0.00
-[4,]     0.00        0.00             0.47                0.47        0.00           0.00
-[5,]     0.00        0.00             0.44                0.44        0.00           0.00
-     SensitivityRatio corX1M corX1Y corMY
-[1,]            55.66   0.27   0.09  0.02
-[2,]            76.08   0.27   0.20  0.47
-[3,]             2.98   0.27   0.25  0.72
-[4,]             2.27   0.27   0.27  0.84
-[5,]             1.76   0.27   0.28  0.90
+     case1 case2 case3   Z+ CorrectDirection pSteiger  pMR corGX corGY corXY
+[1,]  0.00     0  1.00 0.95             0.95     0.27 0.06  0.27  0.00  0.00
+[2,]  0.03     0  0.96 0.90             0.90     0.20 0.41  0.28  0.17  0.61
+[3,]  0.05     0  0.95 0.77             0.77     0.13 0.62  0.27  0.23  0.84
+[4,]  0.05     0  0.94 0.72             0.72     0.10 0.72  0.27  0.25  0.92
 ```
 
-<img src="plotMRdirection.png" width="500">
+<img src="reverseDirection.png" width="500">
