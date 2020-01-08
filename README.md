@@ -35,9 +35,9 @@ After the SNP G, exposure X, and outcome Y are generated, then the reverseDirect
 ## Output
 This function outputs the percent of simulations where the correct direction is detected between the exposure X and outcome Y using the MR Steiger approach. The R functions outputs the percent of simulations where the 3 cases are detected:
 
-### case 1: X->Y if pSteiger<alpha and pMR<alpha and Z>0
-### case 2: X<-Y if pSteiger<alpha and pMR<alpha and Z<0
-### case 3: neither if pSteiger>alpha or pMR>alpha 
+### case 1: X->Y if the p-value from the Steiger corrrelation is less than alpha and p-value from the MR approach is less than alpha and the steiger correlation Z>0
+### case 2: X<-Y if the p-value from the Steiger corrrelation is less than alpha and p-value from the MR approach is less than alpha and the steiger correlation Z<0
+### case 3: inconclusive if the p-value from the Steiger corrrelation is greater than alpha or the p-value from the MR approach is greater than alpha 
 
 The percent of simulations where p-value from the Steiger correlation and MR are less than alpha are outputted (Steiger and MR, respectively). The correlation between the SNP G and the exposure X (corGX), correlation between the SNP G and the outcome Y (corGY), and the correlation between the exposure X and the outcome Y (corXY).
 
