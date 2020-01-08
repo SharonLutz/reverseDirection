@@ -10,13 +10,15 @@ devtools::install_github("SharonLutz/reverseDirection")
 ```
 
 ## Input
-First, the number of SNPs (input nSNP) are generated from a binomial distribution for n subjects (input n) for a given minor allele frequency (input vector MAF).
+First, the SNP is generated from a binomial distribution for n subjects (input n) for a given minor allele frequency (input MAF).
 
-For the SNP X<sub>i</sub>  for i=1,...,K for K SNPs, the mediator/ exposure M is generated from a normal distribution with the variance (input varM) and the mean as follows:
+For the SNP G, the true exposure Xtrue is generated from a normal distribution with the variance (input varX) and the mean as follows:
 
-E\[M \] = &gamma;<sub>o</sub> + &sum; &gamma;<sub>X</sub>  X<sub>i</sub> 
+E\[Xtrue \] = &gamma;<sub>o</sub> + &gamma;<sub>G</sub> G
 
-All of these values are inputted by the user (i.e. the intercept gamma0, and the genetic effect size as a vector gammaX).
+All of these values are inputted by the user (i.e. the intercept gamma0, and the genetic effect size gammaG). If there is measurement error (measurementError==T), then the measured exposure X is generated from the true exposure such that
+
+E\[X \] = &delta;<sub>o</sub> + &delta;<sub>X</sub> X<sub>true</sub>
 
 The outcome Y is generated from a normal distribution with the variance (input varY) and the mean as follows:
 
