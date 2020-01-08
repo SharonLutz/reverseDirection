@@ -12,36 +12,34 @@ devtools::install_github("SharonLutz/reverseDirection")
 ## Input
 First, the SNP is generated from a binomial distribution for n subjects (input n) for a given minor allele frequency (input MAF).
 
-For the SNP G, the true exposure Xtrue is generated from a normal distribution with the variance (input varX) and the mean as follows:
+For the SNP G, the true exposure (X<sub>true</sub>) is generated from a normal distribution with the variance (input varX) and the mean as follows:
 
 E\[Xtrue \] = &gamma;<sub>o</sub> + &gamma;<sub>G</sub> G
 
-All of these values are inputted by the user (i.e. the intercept gamma0, and the genetic effect size gammaG). If there is measurement error (measurementError==T), then the measured exposure X is generated from the true exposure such that
+All of these values are inputted by the user (i.e. the intercept gamma0, and the genetic effect size gammaG). If there is no measurement error (measurementError==F), then X=X<sub>true</sub>. If there is measurement error (measurementError==T), then the measured exposure X is generated from the true exposure X<sub>true</sub> such that
 
 E\[X \] = &delta;<sub>o</sub> + &delta;<sub>X</sub> X<sub>true</sub>
 
-The outcome Y is generated from a normal distribution with the variance (input varY) and the mean as follows:
+where &delta;<sub>o</sub> and &delta;<sub>X</sub> are inputted by the user. The outcome Y is generated from a normal distribution with the variance (input varY) and the mean as follows:
 
-E\[Y \] = &beta;<sub>o</sub> +  &beta;<sub>M</sub> M
+E\[Y \] = &beta;<sub>o</sub> +  &beta;<sub>X</sub> X
 
-All of these values are inputted by the user (i.e. the intercept beta0 and the effect of the mediator directly on the outcome as betaM).
+if there is no pleiotropy (input pleiotropy=F). If there is pleiotropy (input pleiotropy=T), then the outcome Y is generated such that
 
-If there is pleiotropy (input Uconfounder =T), then an additional covariate U is generated from a normal distribution with a variance (input varU) and a mean such that
+E\[Y \] = &beta;<sub>o</sub> +  &beta;<sub>X</sub> X + &beta;<sub>G</sub> G
 
-E\[U \] = &delta;<sub>o</sub> + &sum; &delta;<sub>X</sub>  X<sub>i</sub> 
+All of these values are inputted by the user (i.e. the intercept beta0 and the effect of the exposure directly on the outcome as  &beta;<sub>X</sub>).
 
-(input delta0 and the vector deltaX).
-
-Then, the mediator is generated as defined above, but the outcome Y is generated from a normal distribution with variance (input varY) such that
-
-E\[Y \] = &beta;<sub>o</sub> +  &beta;<sub>M</sub> M  +  &beta;<sub>U</sub> U
-
-(input beta0, the vector betaM, betaU).
-
-After the SNPs X, mediator M, and outcome Y are generated, then the reverseDirection function runs the MR Steiger approach to determine if the mediator M causes the outcome Y.
+After the SNP G, exposure X, and outcome Y are generated, then the reverseDirection function runs the MR Steiger approach to determine if the exposure X causes the outcome Y.
 
 ## Output
-This function outputs the percent of simulations where the correct direction is detected between the mediator M and outcome Y using the MR Steiger approach either not adjusting for measurement error or adjusting for measurement error (CorrectDirection and CorrectDirectionAdj, respectively). The percent of simulations where the Steiger p-value is less than alpha without or with adjusting for measurement error (SteigerTest and SteigerTestAdj, respectively). Also, proportion of simulations where the correct direction is detected and the Steiger p-value is less than alpha without or with adjusting for measurement error is outputted (McausesY and McausesYadj).  The average sensitivity ratio is given by SensitivityRatio. The correlation between the first SNP and the mediator M (corX1M), correlation between the first SNP and the outcome Y (corX1Y) and the correlation between the mediator M and the outcome Y (corMY).
+This function outputs the percent of simulations where the correct direction is detected between the exposure X and outcome Y using the MR Steiger approach. The R functions outputs the percent of simulations where the 3 cases are detected:
+
+### case 1: X->Y if pSteiger<alpha and pMR<alpha and Z>0
+### case 2: X<-Y if pSteiger<alpha and pMR<alpha and Z<0
+### case 3: neither if pSteiger>alpha or pMR>alpha 
+
+The percent of simulations where p-value from the Steiger correlation and MR are less than alpha are outputted (Steiger and MR, respectively). The correlation between the SNP G and the exposure X (corGX), correlation between the SNP G and the outcome Y (corGY), and the correlation between the exposure X and the outcome Y (corXY).
 
 ## Example:
 Consider an example with 100 subjects (input n=100) for one SNP (input nSNP = 1) with a MAF of 50 (input MAF=0.5). Consider a pleiotropic effect (input Uconfounder =T). Then, let the mediator M be generated from a normal distribution with a variance of 1 (input varM = 1) and mean such that 
