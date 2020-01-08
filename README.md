@@ -39,7 +39,7 @@ This function outputs the percent of simulations where the correct direction is 
 #### case 2: X<-Y if the p-value from the Steiger corrrelation is less than alpha and p-value from the MR approach is less than alpha and the steiger correlation Z<0
 #### case 3: inconclusive if the p-value from the Steiger corrrelation is greater than alpha or the p-value from the MR approach is greater than alpha 
 
-The percent of simulations where p-value from the Steiger correlation and MR are less than alpha are outputted (Steiger and MR, respectively). The correlation between the SNP G and the exposure X (corGX), correlation between the SNP G and the outcome Y (corGY), and the correlation between the exposure X and the outcome Y (corXY).
+The percent of simulations where the p-value from the Steiger correlation and MR are less than alpha are outputted (Steiger and MR, respectively). The correlation between the SNP G and the exposure X (corGX), correlation between the SNP G and the outcome Y (corGY), and the correlation between the exposure X and the outcome Y (corXY).
 
 ## Example:
 Consider an example with 100 subjects (input n=100) for one SNP (input nSNP = 1) with a MAF of 50 (input MAF=0.5). Consider a pleiotropic effect (input Uconfounder =T). Then, let the mediator M be generated from a normal distribution with a variance of 1 (input varM = 1) and mean such that 
