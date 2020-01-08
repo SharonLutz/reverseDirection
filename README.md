@@ -33,7 +33,7 @@ All of these values are inputted by the user (i.e. the intercept beta0 and the e
 After the SNP G, exposure X, and outcome Y are generated, then the reverseDirection function runs the MR Steiger approach to determine if the exposure X causes the outcome Y.
 
 ## Output
-This function outputs the percent of simulations where the correct direction is detected between the exposure X and outcome Y using the MR Steiger approach. The R functions outputs the percent of simulations where the 3 cases are detected:
+This function outputs the percent of simulations where the correct direction is detected between the exposure X and outcome Y using the MR Steiger approach. The R functions outputs the percent of simulations where the 3 cases detailed in (Hemani et al., 2017) are detected:
 
 ### case 1: X->Y if the p-value from the Steiger corrrelation is less than alpha and p-value from the MR approach is less than alpha and the steiger correlation Z>0
 ### case 2: X<-Y if the p-value from the Steiger corrrelation is less than alpha and p-value from the MR approach is less than alpha and the steiger correlation Z<0
@@ -71,3 +71,6 @@ The function outputs the following matrix and plot where each row corresponds to
 ```
 
 <img src="reverseDirection.png" width="500">
+
+## Reference:
+Hemani G, Tilling K, Davey Smith G (2017) Orienting the causal relationship between imprecisely measured traits using GWAS summary data. PLOS Genetics 13(11): e1007081.
