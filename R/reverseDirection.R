@@ -58,7 +58,7 @@ if(measurementError!=T & measurementError!=F){stop("measurementError deltast equ
 ################################################################################
     #save results for type 1 error rate betaX=0 and power betaX>0
    matR <- matrix(0,ncol=10,nrow=length(betaX))
-    colnames(matR) <- c("case1","case2","case3","Z+","CorrectDirection","pSteiger","pMR","corGX","corGY","corXY")
+    colnames(matR) <- c("case1","case2","case3","Z+","CorrectDirection","Steiger","MR","corGX","corGY","corXY")
   
 ################################################################################
 # cycle through the sideltalations
@@ -103,7 +103,7 @@ xhat<-G*lm(X~G)$coef["G"]
 pMR<-summary(lm(Y~xhat))$coef["xhat",4]
 
 # H0: BetaMR=0
-if(pMR<sig.level){matR[bX,"pMR"]<-matR[bX,"pMR"]+1}
+if(pMR<sig.level){matR[bX,"MR"]<-matR[bX,"MR"]+1}
 
 ################################################################################
 #Steiger correlation
@@ -114,7 +114,7 @@ Z<-Stest$t
 pSteiger<-Stest$p
 
 if(Z>0){matR[bX,"Z+"]<-matR[bX,"Z+"]+1}
-if(pSteiger<sig.level){matR[bX,"pSteiger"]<-matR[bX,"pSteiger"]+1}
+if(pSteiger<sig.level){matR[bX,"Steiger"]<-matR[bX,"Steiger"]+1}
 if(abs(cor(G,X)) > abs(cor(G,Y))){matR[bX,"CorrectDirection"]<-matR[bX,"CorrectDirection"]+1}
         
 # case 1: X->Y if pSteiger<alpha and pMR<alpha and Z>0
