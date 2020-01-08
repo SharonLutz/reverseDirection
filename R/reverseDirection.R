@@ -65,7 +65,7 @@ if(measurementError!=T & measurementError!=F){stop("measurementError deltast equ
 ################################################################################  
     #cycle through the sideltalations
     for(ii in 1:nSim){
-      printCut<-50
+      printCut<-100
       if(floor(ii/printCut)==ceiling(ii/printCut)){print(paste(ii,"of",nSim,"simulations"))}
       
 ################################################################################
