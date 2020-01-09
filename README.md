@@ -20,7 +20,7 @@ All of these values are inputted by the user (i.e. the intercept gamma0, and the
 
 E\[X \] = &delta;<sub>o</sub> + &delta;<sub>X</sub> X<sub>true</sub>
 
-where &delta;<sub>o</sub> and &delta;<sub>X</sub> are inputted by the user. The outcome Y is generated from a normal distribution with the variance (input varY) and the mean as follows:
+where &delta;<sub>o</sub> and &delta;<sub>X</sub> are inputted by the user (input delta0, deltaX). The outcome Y is generated from a normal distribution with the variance (input varY) and the mean as follows:
 
 E\[Y \] = &beta;<sub>o</sub> +  &beta;<sub>X</sub> X<sub>true</sub>
 
