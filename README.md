@@ -22,15 +22,15 @@ E\[X \] = &delta;<sub>o</sub> + &delta;<sub>X</sub> X<sub>true</sub>
 
 where &delta;<sub>o</sub> and &delta;<sub>X</sub> are inputted by the user. The outcome Y is generated from a normal distribution with the variance (input varY) and the mean as follows:
 
-E\[Y \] = &beta;<sub>o</sub> +  &beta;<sub>X</sub> X
+E\[Y \] = &beta;<sub>o</sub> +  &beta;<sub>X</sub> X<sub>true</sub>
 
 if there is no pleiotropy (input pleiotropy=F). If there is pleiotropy (input pleiotropy=T), then the outcome Y is generated such that
 
-E\[Y \] = &beta;<sub>o</sub> +  &beta;<sub>X</sub> X + &beta;<sub>G</sub> G
+E\[Y \] = &beta;<sub>o</sub> +  &beta;<sub>X</sub> X<sub>true</sub> + &beta;<sub>G</sub> G
 
-All of these values are inputted by the user (i.e. the intercept beta0, the effect of the exposure X on the outcome as  &beta;<sub>X</sub>, and the effect of the SNP G directly on the outcome as  &beta;<sub>G</sub>).
+All of these values are inputted by the user (i.e. the intercept beta0, the effect of the exposure X<sub>true</sub> on the outcome as  &beta;<sub>X</sub>, and the effect of the SNP G directly on the outcome as  &beta;<sub>G</sub>).
 
-After the SNP G, exposure X, and outcome Y are generated, then the reverseDirection function runs the MR Steiger approach to determine if the exposure X causes the outcome Y.
+After the SNP G, exposure X, and outcome Y are generated, then the reverseDirection function runs the MR Steiger approach to determine if the measured exposure X causes the outcome Y.
 
 ## Output
 This function outputs the percent of simulations where the correct direction is detected between the exposure X and outcome Y using the MR Steiger approach. The R functions outputs the percent of simulations where the 3 cases detailed in (Hemani et al., 2017) are detected:
