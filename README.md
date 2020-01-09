@@ -16,7 +16,7 @@ For the SNP G, the true exposure (X<sub>true</sub>) is generated from a normal d
 
 E\[Xtrue \] = &gamma;<sub>o</sub> + &gamma;<sub>G</sub> G
 
-All of these values are inputted by the user (i.e. the intercept gamma0, and the genetic effect size gammaG). If there is no measurement error (measurementError==F), then X=X<sub>true</sub>. If there is measurement error (measurementError==T), then the measured exposure X is generated from the true exposure X<sub>true</sub> such that
+All of these values are inputted by the user (i.e. the intercept gamma0, and the genetic effect size gammaG). If there is no measurement error (input measurementError=F), then X=X<sub>true</sub>. If there is measurement error (input measurementError=T), then the measured exposure X is generated from the true exposure X<sub>true</sub> such that
 
 E\[X \] = &delta;<sub>o</sub> + &delta;<sub>X</sub> X<sub>true</sub>
 
