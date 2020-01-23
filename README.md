@@ -58,7 +58,7 @@ pleiotropy = F, varY = 0.2, sig.level = 0.05, SEED = 1, plot.pdf = T, plot.name 
 round(results$matrix,2)
 ```
 
-The function outputs the following matrix and plot where each row corresponds to &beta;<sub>X</sub> (input betaX). As seen below, mostly case 3 is detected which means that the MR Steiger method is not conclusive if the exposure X causes the outcome Y.
+The function outputs the following matrix and plot where each row corresponds to &beta;<sub>X</sub> (input betaX). As seen below, mostly case 3 is detected, which means that the MR Steiger method is inconclusive as to whether the exposure X causes the outcome Y.
 ```
      case1 case2 case3   Z+ Steiger   MR corGX corGY corXY
 [1,]  0.00     0  1.00 0.95    0.27 0.06  0.27  0.00  0.00
