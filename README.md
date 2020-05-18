@@ -53,7 +53,7 @@ library(reverseDirection)
 
 results<-reverseDirection(nSim = 1000, n = 100, MAF = 0.5, gamma0 = 0, gammaG = 0.4, varX = 1, 
 measurementError = F,  beta0 = 0, betaX = seq(from = 0, to = 1, length.out = 4), 
-pleiotropy = F, varY = 0.2, sig.level = 0.05, SEED = 1, plot.pdf = T, plot.name = "reverseDirection.pdf")
+pleiotropy = F, varY = 0.2, sig.level = 0.05, SEED = 1, plot.pdf = T, plot.name = "reverseDirection")
 
 round(results$matrix,2)
 ```
