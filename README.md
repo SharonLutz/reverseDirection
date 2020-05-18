@@ -43,19 +43,18 @@ The percent of simulations where the p-value from the Steiger correlation and MR
 
 ## Example:
 Consider an example with 100 subjects (input n=100) with a MAF of 50 (input MAF=0.5). Consider no pleiotropy or measurement error (input measurementError = F, pleiotropy = F). Then, let the exposure X be generated from a normal distribution with a variance of 1 (input varX = 1) and mean such that 
-E\[X \] = 0 + 0.4 G
-(input gamma0=0, gammaX=0.4). The outcome Y is generated from a normal distribution with a variance of 1 (input varY = 1) and mean such that 
+E\[X \] = 0 + 1 G
+(input gamma0=0, gammaG=1). The outcome Y is generated from a normal distribution with a variance of 0.2 (input varY = 0.2) and mean such that 
 E\[Y \] = 0 + &beta;<sub>X</sub> X 
-(input beta0 = 0) and &beta;<sub>X</sub> varies from 0 to 1 by 0.25 (betaX = seq(from = 0, to = 1, length.out = 4)). The R code to run this example is given below.
+(input beta0 = 0) and &beta;<sub>X</sub> varies from 0 to 2 (betaX = c(seq(from = 0, to = 0.5, by=0.1),seq(from = 0.75, to = 2, by=0.25))). The R code to run this example is given below.
 
 ```
 library(reverseDirection)
 
 results<-reverseDirection(nSim = 10000, n = 100, MAF = 0.5, gamma0 = 0, gammaG = 1, varX = 1, 
-measurementError = F, delta0 = 0, deltaX = 1, varME = 0.2, 
+measurementError = F,  
 beta0 = 0, betaX = c(seq(from = 0, to = 0.5, by=0.1),seq(from = 0.75, to = 2, by=0.25)), 
-pleiotropy = F, betaG = 1, varY = 0.2, 
-sig.level = 0.05, SEED = 1, plot.pdf = T, plot.name = "ReverseDirection")
+pleiotropy = F, varY = 0.2, sig.level = 0.05, SEED = 1, plot.pdf = T, plot.name = "ReverseDirection")
 
 
 round(results$matrix,2)
