@@ -51,11 +51,10 @@ E\[Y \] = 0 + &beta;<sub>X</sub> X
 ```
 library(reverseDirection)
 
-results<-reverseDirection(nSim = 10000, n = 100, MAF = 0.5, gamma0 = 0, gammaG = 1, varX = 1, 
-measurementError = F, delta0 = 0, deltaX = 1, varME = 0.2, 
+results<-reverseDirection(nSim = 10000, n = 100, MAF = 0.5, gamma0 = 0, gammaG = 1, varX = 1, measurementError = F, delta0 = 0, deltaX = 1, varME = 0.2, 
 beta0 = 0, betaX = c(seq(from = 0, to = 0.5, by=0.1),seq(from = 0.75, to = 2, by=0.25)), 
 pleiotropy = F, betaG = 1, varY = 0.2, 
-sig.level = 0.05, SEED = 1, plot.pdf = T, plot.name = "NoPleiotropyNoMeasurementError")
+sig.level = 0.05, SEED = 1, plot.pdf = T, plot.name = "ReverseDirection")
 
 
 round(results$matrix,2)
