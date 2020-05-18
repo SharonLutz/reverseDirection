@@ -2,7 +2,7 @@ reverseDirection <-
 function(nSim=1000,n=100,MAF=0.5,gamma0=0,gammaG=0.2,varX=1,
 measurementError=F,delta0=0,deltaX=1,varME=1,
 beta0=0,betaX=seq(from=0,to=1,length.out=4),pleiotropy=F,betaG=1,varY=0.2,
-sig.level=0.05,SEED=1,plot.pdf=T,plot.name="reverseDirection.pdf"){
+sig.level=0.05,SEED=1,plot.pdf=T,plot.name="reverseDirection"){
  
 ################################################################################   
 # load libraries
@@ -136,14 +136,45 @@ if(Z<0){matR[bX,"case2"]<-matR[bX,"case2"]+1}
 ################################################################################    
     mat_total <- matR/nSim
     
+
     if(plot.pdf){
-      pdf(plot.name)
+    	
+    	################### 
+    	#case plot
+    ################### 
+      pdf(paste(plot.name,"Cases.pdf",sep=""))
       plot(-2,-2,xlim=c(min(betaX),max(betaX)),ylim=c(0,1.1),main="",xlab=expression(beta[X]),ylab="Proportion of Simulations")
       lines(betaX,mat_total[,"case1"],col=1,pch=1,lty=1,type="b")
       lines(betaX,mat_total[,"case2"],col=2,pch=2,lty=2,type="b")
       lines(betaX,mat_total[,"case3"],col=3,pch=3,lty=3,type="b")
       legend("topleft",c("case 1: X->Y","case 2: X<-Y","case 3: inconclusive"),col=c(1:3),pch=c(1:3),lty=c(1:3),horiz=T,x.intersp=0)
       dev.off()
+      
+      	################### 
+      # p-value steiger plot
+      	################### 
+      
+      pdf(paste(plot.name,"Components.pdf",sep=""))
+      plot(-2,-2,xlim=c(min(betaX),max(betaX)),ylim=c(0,1.1),main="",xlab=expression(beta[X]),ylab="Proportion of Simulations")
+      lines(betaX,mat_total[,"Z+"],col=1,pch=1,lty=1,type="b")
+      lines(betaX,mat_total[,"Steiger"],col=2,pch=2,lty=2,type="b")
+      lines(betaX,mat_total[,"MR"],col=3,pch=3,lty=3,type="b")
+      legend("topleft",c("Test statistic >0","Steiger P < alpha","MR P < alpha"),
+      col=c(1:3),pch=c(1:3),lty=c(1:3),horiz=T,x.intersp=0)
+      dev.off()
+      
+      
+      	################### 	
+      #correlation plot
+      	################### 
+       pdf(paste(plot.name,"Correlation.pdf",sep=""))
+      plot(-2,-2,xlim=c(min(betaX),max(betaX)),ylim=c(0,1.1),main="",xlab=expression(beta[X]),ylab="Average")
+      lines(betaX,mat_total[,"corGX"],col=1,pch=1,lty=1,type="b")
+      lines(betaX,mat_total[,"corGY"],col=2,pch=2,lty=2,type="b")
+      lines(betaX,mat_total[,"corXY"],col=3,pch=3,lty=3,type="b")
+      legend("topleft",c("Correlation G & X", "Correlation G & Y","Correlation X & Y"),col=c(1:3),pch=c(1:3),lty=c(1:3),horiz=T,x.intersp=0)
+      dev.off()
+      
     }
     
     # Print out the matrix but use list
