@@ -10,9 +10,9 @@ devtools::install_github("SharonLutz/reverseDirection")
 ```
 
 ## Input
-First, the SNP is generated from a binomial distribution for n subjects (input n) for a given minor allele frequency (input MAF).
+First, the SNPs are generated from a binomial distribution for n subjects (input n) for a given vector of minor allele frequencies (input MAF).
 
-For the SNP G, the true exposure (X<sub>true</sub>) is generated from a normal distribution with the variance (input varX) and the mean as follows:
+For the SNPs G, the true exposure (X<sub>true</sub>) is generated from a normal distribution with the variance (input varX) and the mean as follows:
 
 E\[Xtrue \] = &gamma;<sub>o</sub> + &gamma;<sub>G</sub> G
 
