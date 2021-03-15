@@ -18,7 +18,7 @@ E\[Xtrue \] = &gamma;<sub>o</sub> + &gamma;<sub>G</sub> G
 
 All of these values are inputted by the user (i.e. the intercept gamma0, and the genetic effect size gammaG). If there is no measurement error (input measurementError=F), then X=X<sub>true</sub>. If there is measurement error (input measurementError=T), then the measured exposure X is generated from the true exposure X<sub>true</sub> such that
 
-E\[X \] = &delta;<sub>o</sub> + &delta;<sub>X</sub> X<sub>true</sub>
+E\[X \] = &delta;<sub>o</sub> + &sum &delta;<sub>X</sub> X<sub>true</sub>
 
 where &delta;<sub>o</sub> and &delta;<sub>X</sub> are inputted by the user (input delta0, deltaX). The outcome Y is generated from a normal distribution with the variance (input varY) and the mean as follows:
 
