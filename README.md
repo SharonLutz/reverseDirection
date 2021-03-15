@@ -30,7 +30,7 @@ E\[Y \] = &beta;<sub>o</sub> +  &beta;<sub>X</sub> X<sub>true</sub> + &Sigma; &b
 
 All of these values are inputted by the user (i.e. the intercept beta0, the effect of the exposure X<sub>true</sub> on the outcome as  &beta;<sub>X</sub>, and the vector of the effect of the SNPs G directly on the outcome as  &beta;<sub>G</sub>).
 
-If there is unmeasured confounding (unmeasuredConfounding=T) between the exposure X and the outcome Y,then the unmeasured confounder U is generated from a normal distribution with user specified mean and variance (i.e. meanU, varU). Then, exposure X and outcome Y are generated such that
+If there is unmeasured confounding (unmeasuredConfounding=T) between the exposure X and the outcome Y, then the unmeasured confounder U is generated from a normal distribution with user specified mean and variance (i.e. meanU, varU). Then, the exposure X and outcome Y are generated such that
 
 E\[Xtrue \] = &gamma;<sub>o</sub> + &Sigma; &gamma;<sub>G</sub> G + &gamma;<sub>U</sub> U
 
