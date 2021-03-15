@@ -14,7 +14,7 @@ First, the SNPs are generated from a binomial distribution for n subjects (input
 
 For the SNPs G, the true exposure (X<sub>true</sub>) is generated from a normal distribution with the variance (input varX) and the mean as follows:
 
-E\[Xtrue \] = &gamma;<sub>o</sub> + &sigma; &gamma;<sub>G</sub> G
+E\[Xtrue \] = &gamma;<sub>o</sub> + &Sigma; &gamma;<sub>G</sub> G
 
 All of these values are inputted by the user (i.e. the intercept gamma0, and the genetic effect size gammaG). If there is no measurement error (input measurementError=F), then X=X<sub>true</sub>. If there is measurement error (input measurementError=T), then the measured exposure X is generated from the true exposure X<sub>true</sub> such that
 
