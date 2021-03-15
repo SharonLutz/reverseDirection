@@ -3,7 +3,7 @@ Examines the MR Steiger approach to detect the directionality between the exposu
 
 ## Installation
 ```
-install.packages("devtools")  # devtools must be installed first, R v3.4 or higher is needed
+install.packages("devtools")  # R v3.4 or higher is needed
 install.packages("psych")
 
 devtools::install_github("SharonLutz/reverseDirection")
