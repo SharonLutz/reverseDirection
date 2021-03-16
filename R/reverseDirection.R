@@ -1,9 +1,9 @@
 reverseDirection <-
-function(nSim=1000,n=100,MAF=c(rep(0.5,10)),
-gamma0=0,gammaG=c(rep(0.2,5),rep(0.1,5)),varX=1,
+function(nSim=1000,n=100,MAF=c(0.5),
+gamma0=0,gammaG=c(0.2),varX=1,
 measurementError=F,delta0=0,deltaX=1,varME=1,
 beta0=0,betaX=seq(from=0,to=1,length.out=4),
-pleiotropy=F,betaG=c(rep(0.2,5),rep(0.1,5)),varY=0.2,
+pleiotropy=F,betaG=c(0.2),varY=0.2,
 unmeasuredConfounding=F,meanU=0,varU=1,gammaU=1,betaU=1,
 sig.level=0.05,SEED=1,plot.pdf=T,plot.name="reverseDirection"){
  
