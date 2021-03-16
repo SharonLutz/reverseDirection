@@ -88,7 +88,7 @@ The function outputs the following matrix and plot where each row corresponds to
 [12,]  0.09  0.01  0.91 0.73    0.09 1.00  0.58  0.57  0.98
 ```
 
-<img src="reverseDirection.png" width="500">
+<img src="ReverseDirection.png" width="500">
 
 ## Reference:
 Hemani G, Tilling K, Davey Smith G (2017) Orienting the causal relationship between imprecisely measured traits using GWAS summary data. PLOS Genetics 13(11): e1007081.
