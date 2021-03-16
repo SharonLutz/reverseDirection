@@ -61,7 +61,8 @@ E\[Y \] = 0 + &beta;<sub>X</sub> X
 ```
 library(reverseDirection)
 
-results<-reverseDirection(nSim = 10000, n = 100, MAF = 0.5, gamma0 = 0, gammaG = 1, varX = 1, 
+results<-reverseDirection(nSim = 10000, n = 100, MAF = 0.5, 
+gamma0 = 0, gammaG = 1, varX = 1, 
 measurementError = F,  
 beta0 = 0, betaX = c(seq(from = 0, to = 0.5, by=0.1),seq(from = 0.75, to = 2, by=0.25)), 
 pleiotropy = F, unmeasuredConfounding=F, varY = 0.2, sig.level = 0.05, 
