@@ -91,6 +91,7 @@ if(unmeasuredConfounding!=T & unmeasuredConfounding!=F){stop("unmeasuredConfound
 		
 		# Generate unmeasured confounder U
          U<-rnorm(n,mean=meanU,sd=sqrt(varU))
+	      U<-(U-mean(U))/sd(U)
     
         # Generate X (exposure/ intermediate phenotype)
         gammaG<-matrix(gammaG,nrow=length(gammaG),ncol=1)
