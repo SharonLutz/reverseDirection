@@ -1,5 +1,5 @@
 # reverseDirection
-Examines the MR Steiger approach to detect the directionality between phenotype 1 X and photype 2 Y through simulation studies.
+Examines the MR Steiger approach to detect the directionality between phenotype 1 X and phenotype 2 Y through simulation studies.
 
 ## Installation
 ```
