@@ -106,7 +106,9 @@ if(unmeasuredConfounding!=T & unmeasuredConfounding!=F){stop("unmeasuredConfound
 			X<-rnorm(n,(delta0+deltaX*Xtrue),sqrt(varME))}
 		if(measurementError==F ){
 			X<-Xtrue}
-		
+	 
+	 Xtrue<-(Xtrue- mean(Xtrue))/sd(Xtrue)
+	 
 		# Generate Y (outcome)
         if(pleiotropy==T & unmeasuredConfounding==F){
         	Y <- rnorm(n,(beta0 + betaX[bX]*Xtrue +G%*%betaG),sqrt(varY))}
@@ -116,6 +118,8 @@ if(unmeasuredConfounding!=T & unmeasuredConfounding!=F){stop("unmeasuredConfound
          	Y <- rnorm(n,(beta0 + betaX[bX]*Xtrue +betaU*U),sqrt(varY))}
         if(pleiotropy==F & unmeasuredConfounding==F){
          	Y <- rnorm(n,(beta0 + betaX[bX]*Xtrue),sqrt(varY))}
+	 
+	Y<-(y-mean(Y))/sd(Y)
         
         #Correlation with first SNP        
         matR[bX,"corGY"]<-matR[bX,"corGY"]+cor(G[,1],Y)
