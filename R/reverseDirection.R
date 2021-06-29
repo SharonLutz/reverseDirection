@@ -119,7 +119,7 @@ if(unmeasuredConfounding!=T & unmeasuredConfounding!=F){stop("unmeasuredConfound
         if(pleiotropy==F & unmeasuredConfounding==F){
          	Y <- rnorm(n,(beta0 + betaX[bX]*Xtrue),sqrt(varY))}
 	 
-	Y<-(y-mean(Y))/sd(Y)
+	Y<-(Y-mean(Y))/sd(Y)
         
         #Correlation with first SNP        
         matR[bX,"corGY"]<-matR[bX,"corGY"]+cor(G[,1],Y)
