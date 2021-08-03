@@ -91,7 +91,7 @@ The function outputs the following matrix and plot where each row corresponds to
 
 <img src="ReverseDirection.png" width="500">
 
-## Reference:
+## References:
 Lutz SM, Wu AC, Hokanson JE, Vansteelandt S, Lange C. (2021) Caution Against Examining the Role of Reverse Causality in Mendelian Randomization. Gen Epi.
 
 Hemani G, Tilling K, Davey Smith G (2017) Orienting the causal relationship between imprecisely measured traits using GWAS summary data. PLOS Genetics 13(11): e1007081.
