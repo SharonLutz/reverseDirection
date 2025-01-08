@@ -61,7 +61,6 @@ if(unmeasuredConfounding!=T & unmeasuredConfounding!=F){stop("unmeasuredConfound
 ################################################################################
 # Matrix to save Results
 ################################################################################
-    #save results for type 1 error rate betaX=0 and power betaX>0
    matR <- matrix(0,ncol=9,nrow=length(betaX))
     colnames(matR) <- c("case1","case2","case3","Z+","Steiger","MR","corGX","corGY","corXY")
   
